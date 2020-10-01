@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  </head>
+  <style media="screen">
+  .mytext {
+  width: 300px;
+  }
+  </style>
+  <body>
+    <center>
+      <div class="container">
+
+
+      <h1>jumbbled Game</h1>
+    <h3>{{ msg }}</h3>
+
+      <form action="{% url 'check' %}"  method="GET">
+          {% csrf_token %}
+          <input type="text" name="answer" value="" placeholder="Answer" class="mytext"><br><br>
+          <button type="Submit" name="button" class="btn btn-primary">Submit</button>
+      </form>
+
+      <h3>Status of your answer ----->{{ msgs }}</h3>
+      </div>
+
+    </center>
+
+  </body>
+</html>
